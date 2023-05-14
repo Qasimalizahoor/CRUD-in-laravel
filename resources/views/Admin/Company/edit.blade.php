@@ -22,14 +22,23 @@
                                 <div class="mb-3 ">
                                     <label for="" class="form-label">Name</label>
                                     <input type="text" name="name" placeholder="Enter Your Company Name" class="form-control" value="{{$company->name}}">
+                                    @error('name')
+                                    <span class="text-danger ">{{ $message }}</span>
+                                     @enderror
                                 </div>
                                 <div class="mb-3 ">
                                     <label for="" class="form-label">Email</label>
                                     <input type="text" name="email" placeholder="Enter Your Company Email" class="form-control " value="{{$company->email}}">
+                                    @error('email')
+                                    <span class="text-danger ">{{ $message }}</span>
+                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label">Website Link</label>
                                     <input type="text" name="website" placeholder="Enter Your Company webiste link" class="form-control" value="{{$company->email}}">
+                                    @error('website')
+                                    <span class="text-danger ">{{ $message }}</span>
+                                     @enderror
                                 </div>
                                 
                                 <div class="mb-3">

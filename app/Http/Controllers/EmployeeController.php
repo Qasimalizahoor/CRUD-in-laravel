@@ -64,8 +64,7 @@ class EmployeeController extends Controller
         $employee->phone = $request->phone;
         $employee->company_id = $request->company_id;
         $employee->save();
-        return view('Admin.Employee.index');
-        // return $request->all();
+        return redirect()->route('employee.index');
     }
 
     /**
@@ -121,7 +120,9 @@ class EmployeeController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
         ]);
-        return view('Admin.Employee.index');
+        // return view('Admin.Employee.index');
+        return redirect()->route('employee.index');
+
     }
 
     /**
@@ -135,6 +136,8 @@ class EmployeeController extends Controller
         
          $employee =  Employee::Find($req->employee_id);
         $employee->delete();
-        return view('Admin.Employee.index');
+        // return view('Admin.Employee.index');
+        return redirect()->route('employee.index');
+
     }
 }

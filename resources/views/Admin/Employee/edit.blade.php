@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label">Phone</label>
-                                    <input type="text" name="phone" placeholder="03331234567" class="form-control" value="{{$employee->email}}">
+                                    <input type="text" name="phone" placeholder="03331234567" class="form-control" value="{{$employee->phone}}">
                                     @error('phone')
                                     <span class="text-danger ">{{ $message }}</span>
                                      @enderror

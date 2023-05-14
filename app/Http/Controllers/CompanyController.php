@@ -63,7 +63,7 @@ class CompanyController extends Controller
         $company->logo = 'not working yet';
         $company->website = $request->website;
         $company->save();
-        return view('Admin.Company.index');
+        return redirect()->route('company.index');
 
     }
 
@@ -114,7 +114,7 @@ class CompanyController extends Controller
             'email' => $request->email,
             'website' => $request->website,
         ]);
-        return view('Admin.Company.index');
+        return redirect()->route('company.index');
     }
 
     /**
@@ -127,6 +127,6 @@ class CompanyController extends Controller
     {
         $company =  Company::Find($req->company_id);
         $company->delete();
-        return view('Admin.Company.index');
+        return redirect()->route('company.index');
     }
 }
