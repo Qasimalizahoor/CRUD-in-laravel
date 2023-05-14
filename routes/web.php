@@ -33,13 +33,15 @@ Route::get('/sign-out', [AuthController::class, 'signOut'])->name('signout'); //
 
 Route::middleware(['customAuth'])->group(function(){
     // Company
-    Route::resource('company',CompanyController::class);
     Route::get('company/ajax/get', [CompanyController::class, 'getCompanies'])->name('get.ajax.company');
+    Route::resource('company',CompanyController::class)->except('show');
+    
     
     
     // Employee
-    Route::resource('employee',EmployeeController::class);
     Route::get('employee/ajax/get', [EmployeeController::class, 'getEmployees'])->name('get.ajax.employee');
+    Route::resource('employee',EmployeeController::class)->except('show');
+    
 });
 
 
